@@ -44,6 +44,11 @@
   return self;
 }
 
+- (void)dealloc
+{
+  [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 -(void)applicationDidEnterBackground:(NSNotification *)notification {
   // Synchronize user defaults when app moves to background,
   [[NSUserDefaults standardUserDefaults] synchronize];

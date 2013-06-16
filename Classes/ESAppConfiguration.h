@@ -37,7 +37,7 @@
 /**
  @return A shared configuration instance.
 */
-+(id)defaultConfig;
++(instancetype)defaultConfig;
 
 /**
  Gets the value for a configuration key.

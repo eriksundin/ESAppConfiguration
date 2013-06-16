@@ -33,7 +33,7 @@
 
 @implementation ESAppConfiguration
 
-+ (id)defaultConfig {
++ (instancetype)defaultConfig {
   static id _sharedInstance = nil;
   static dispatch_once_t onceToken;
   dispatch_once(&onceToken, ^{

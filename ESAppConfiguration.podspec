@@ -8,7 +8,6 @@ Pod::Spec.new do |s|
   s.author       = { "Erik Sundin" => "erik@eriksundin.se" }
   s.source       = { :git => "https://github.com/eriksundin/ESAppConfiguration.git", :tag => "1.0.0" }
   
-  s.platform     = :ios
   s.source_files = 'Classes'
   s.requires_arc = true
 end

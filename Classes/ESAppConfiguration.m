@@ -49,12 +49,18 @@
     
     [[NSUserDefaults standardUserDefaults] registerDefaults:@{[self mutableConfigurationNSUserDefaultsKey] : [NSDictionary dictionary]}];
   
+#if defined(__IPHONE_OS_VERSION_MIN_REQUIRED)
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(applicationDidEnterBackground:)
                                                  name:UIApplicationDidEnterBackgroundNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(applicationDidReceiveMemoryWarning:)
                                                  name:UIApplicationDidReceiveMemoryWarningNotification object:nil];
+#else
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(applicationDidEnterBackground:)
+                                                 name: NSApplicationWillResignActiveNotification object:nil];
+#endif
 
   
   }
